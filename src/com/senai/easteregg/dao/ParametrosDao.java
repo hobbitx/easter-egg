@@ -18,6 +18,7 @@ public class ParametrosDao {
 	private String[] colunas = { AppDatabase.COLUMN_ID,
 			AppDatabase.COLUMN_DESCRICAO, AppDatabase.COLUMN_VALOR,
 			};
+	private String[] colunasD = {AppDatabase.COLUMN_DESCRICAO};
 
 	public ParametrosDao(Context c) {
 		dbhelper = new AppDatabase(c);
@@ -26,7 +27,7 @@ public class ParametrosDao {
 	}
 
 	public long salvar(Parametros t) {
-		Parametros novaTarefa = null;
+		Parametros novoParametro = null;
 
 		ContentValues values = new ContentValues();
 		values.put(AppDatabase.COLUMN_DESCRICAO, t.getDescricao().toString());
@@ -47,7 +48,7 @@ public class ParametrosDao {
 		long insertId = database.update(AppDatabase.TABLE_PARAMETROS, values, AppDatabase.COLUMN_ID + " = ?", 
 				new String[] {String.valueOf(t.getId())});
 		
-		Parametros novaTarefa = buscar(insertId);
+		Parametros novaTarefa = buscarID(insertId);
 		return novaTarefa;
 		
 		
@@ -57,7 +58,30 @@ public class ParametrosDao {
 
 	}
 
-	public Parametros buscar(long id) {
+	public Parametros buscar(String descricao) {
+		Parametros t = null;
+		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunas,AppDatabase.COLUMN_DESCRICAO + " = ?",
+				new String[] {String.valueOf(descricao)},null,null,null);
+		if(cursor.moveToFirst()){
+			t = cursoToTarefa(cursor);
+			
+		}
+		cursor.close();
+		return t;
+	}
+	public ArrayList<Parametros> buscarFeitos(String valor) {
+		ArrayList<Parametros> feitos = new ArrayList<Parametros>();
+		Parametros t = null;
+		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunasD,AppDatabase.COLUMN_VALOR + " = ?",
+				new String[] {String.valueOf(valor)},null,null,null);
+		if(cursor.moveToFirst()){
+			t = cursoToTarefa(cursor);
+			feitos.add(t);
+		}
+		cursor.close();
+		return feitos;
+	}
+	public Parametros buscarID(long id) {
 		Parametros t = null;
 		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunas,AppDatabase.COLUMN_ID + " = ?",
 				new String[] {String.valueOf(id)},null,null,null);

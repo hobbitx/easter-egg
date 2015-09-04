@@ -1,6 +1,12 @@
 package com.senai.easteregg;
 
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import com.senai.easteregg.dao.ParametrosDao;
+import com.senai.easteregg.modelo.Parametros;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,14 +18,23 @@ import android.widget.Toast;
 
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;
-	private TextView tv_instrucao;
-	private String resultado ="";
+	private TextView tv_dica;
+	private String resultado ="",dica ="",vericacao = "";
+	private Instrucoes ins;
+	private ArrayList<String> instrucoes = new ArrayList<String>();
+	private ArrayList<String> dicas = new ArrayList<String>();
+	private ArrayList<String> controle = new ArrayList<String>();
+	private ArrayList<Parametros> Feitos = new ArrayList<Parametros>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkpoint);
-		
-		tv_instrucao = (TextView)findViewById(R.id.tv_instrucao);
+		ins = new Instrucoes();
+		instrucoes = ins.instrucoes;
+		dicas = ins.dicas;
+		controle = ins.controle;
+		tv_dica = (TextView)findViewById(R.id.tv_dica);
 	}
 
 	public void leitura(View view){
@@ -46,6 +61,7 @@ public class CheckpointActivity extends Activity {
 		 * */
 		if(REQUEST_CODE == requestCode && RESULT_OK == resultCode){
 			if(data.getStringExtra("SCAN_FORMAT").equals("QR_CODE")){
+				resultado = data.getStringExtra("SCAN_RESULT");
 				verificarCheckpoint();
 		}
 			else {
@@ -54,8 +70,54 @@ public class CheckpointActivity extends Activity {
 			}
 	}
 	
+	
 	private void verificarCheckpoint() {
+		ParametrosDao dao = new ParametrosDao(this);
+		Parametros pq = null;
 		
+		if(resultado.equals("inicio")){
+			pq.setDescricao(resultado);
+			pq.setValor("1");
+			gerarDica();
+			tv_dica.setText(dica);
+			dao.salvar(pq);
+		}
+		else if(resultado.equals(vericacao)){//banheiro}
+			String a="";
+			pq.setDescricao(resultado);
+			pq.setValor("1");
+			gerarDica();
+			for (int i = 0; i <Feitos.size(); i++) {
+				
+			a = Feitos.get(i).toString();
+			
+			if(!vericacao.equals(a)){
+				tv_dica.setText(dica);
+				dao.salvar(pq);
+			}
+			else{
+				
+			}
+			}
+			
+		}
+		else{
+			Toast.makeText(this, "Checkpoint invalido", Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	private void buscarFeitos() {
+		ParametrosDao dao = new ParametrosDao(this);
+		Parametros p = null;
+		String ver;
+		Feitos = dao.buscarFeitos("1");
+		
+		}
+	
+	private void gerarDica() {
+		int r = new Random().nextInt(dicas.size());
+		dica = dicas.get(r);
+		vericacao = controle.get(r);
 
 	}
 	@Override
