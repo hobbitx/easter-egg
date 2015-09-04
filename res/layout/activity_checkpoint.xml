@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.senai.easteregg.CheckpointActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_imagem"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Imagem"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+>
+
+            <ImageView
+                android:id="@+id/iv_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/negra" />
+
+            <ImageView
+                android:id="@+id/iv_02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/branco" />
+
+            <ImageView
+                android:id="@+id/iv_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/branco" />
+
+            <ImageView
+                android:id="@+id/iv_04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/branco" />
+
+            <ImageView
+                android:id="@+id/iv_05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/branco" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:text="Titulo da dica"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/tv_instrucao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_capturar"
+                android:onClick="leitura"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/botao_capturar" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
