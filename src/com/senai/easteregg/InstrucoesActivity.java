@@ -51,21 +51,21 @@ public class InstrucoesActivity extends Activity {
 	
 	private void mudarImagens(int i) {
 		if(i==2){
-			iv_01.setImageResource(R.drawable.branco);
-			iv_02.setImageResource(R.drawable.negra);
+			iv_01.setImageResource(R.drawable.marcador_branco);
+			iv_02.setImageResource(R.drawable.marcador_azul);
 			
 		}
 		else if(i==3){
-			iv_02.setImageResource(R.drawable.branco);
-			iv_03.setImageResource(R.drawable.negra);
+			iv_02.setImageResource(R.drawable.marcador_branco);
+			iv_03.setImageResource(R.drawable.marcador_azul);
 		}
 		else if(i==4){
-			iv_03.setImageResource(R.drawable.branco);
-			iv_04.setImageResource(R.drawable.negra);
+			iv_03.setImageResource(R.drawable.marcador_branco);
+			iv_04.setImageResource(R.drawable.marcador_azul);
 		}
 		else if(i==5){
-			iv_04.setImageResource(R.drawable.branco);
-			iv_05.setImageResource(R.drawable.negra);
+			iv_04.setImageResource(R.drawable.marcador_branco);
+			iv_05.setImageResource(R.drawable.marcador_azul);
 }
 		else{
 			
