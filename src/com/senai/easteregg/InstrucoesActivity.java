@@ -11,80 +11,83 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class InstrucoesActivity extends Activity {
-	private ArrayList<String> instrucoes = new ArrayList<String>();
-	private Instrucoes ins;
-	private String texto;
-	private int a=0;
-	private TextView tv_instrucao;
-	private ImageView iv_01,iv_02,iv_03,iv_04,iv_05;
+	private ArrayList<String> textoInstrucoes = new ArrayList<String>();
+	private ArrayList<String> tituloInstrucoes = new ArrayList<String>();
+	private Instrucoes instrucoes;
+	private Integer posicao = 0;
+	private TextView tvInstrucao, tvTituloIstrucao;
+	private ImageView iv01, iv02, iv03, iv04, iv05, ivBanner;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_instrucoes);
+
+		tvInstrucao = (TextView) findViewById(R.id.tv_instrucao);
+		tvTituloIstrucao = (TextView) findViewById(R.id.tv_titulo);
+
+		iv01 = (ImageView) findViewById(R.id.iv_01);
+		iv02 = (ImageView) findViewById(R.id.iv_02);
+		iv03 = (ImageView) findViewById(R.id.iv_03);
+		iv04 = (ImageView) findViewById(R.id.iv_04);
+		iv05 = (ImageView) findViewById(R.id.iv_05);
 		
-		tv_instrucao = (TextView)findViewById(R.id.tv_instrucao);
-		iv_01 = (ImageView) findViewById(R.id.iv_01);
-		iv_02 = (ImageView) findViewById(R.id.iv_02);
-		iv_03 = (ImageView) findViewById(R.id.iv_03);
-		iv_04 = (ImageView) findViewById(R.id.iv_04);
-		iv_05 = (ImageView) findViewById(R.id.iv_05);
-		ins =  new Instrucoes();
-		instrucoes = ins.instrucoes;
-		texto = instrucoes.get(a)+ instrucoes.get(a+1);
-		a = 1;
-		tv_instrucao.setText(texto);
+		ivBanner = (ImageView) findViewById(R.id.iv_banner);
+
+		instrucoes = new Instrucoes();
+		textoInstrucoes = instrucoes.instrucoes;
+		tvInstrucao.setText(textoInstrucoes.get(posicao));
 		
+		tituloInstrucoes = instrucoes.tituloInstrucoes;
+		tvTituloIstrucao.setText(tituloInstrucoes.get(posicao));
 	}
 
 	public void next(View v) {
-		if(a==5){
-			//chamar outra tela
-		}
-		else{
-		texto = instrucoes.get(a+1);
-		tv_instrucao.setText(texto);
-		a++;
-		mudarImagens(a);
+		next();
+	}
+
+	public void next() {
+		if (posicao >= 4) {
+			// chamar outra tela
+		} else {
+			posicao++;
+			tvInstrucao.setText(textoInstrucoes.get(posicao));
+			tvTituloIstrucao.setText(tituloInstrucoes.get(posicao));
+			mudarImagens(posicao);
 		}
 	}
-	
-	
+
 	private void mudarImagens(int i) {
-		if(i==2){
-			iv_01.setImageResource(R.drawable.marcador_branco);
-			iv_02.setImageResource(R.drawable.marcador_azul);
-			
-		}
-		else if(i==3){
-			iv_02.setImageResource(R.drawable.marcador_branco);
-			iv_03.setImageResource(R.drawable.marcador_azul);
-		}
-		else if(i==4){
-			iv_03.setImageResource(R.drawable.marcador_branco);
-			iv_04.setImageResource(R.drawable.marcador_azul);
-		}
-		else if(i==5){
-			iv_04.setImageResource(R.drawable.marcador_branco);
-			iv_05.setImageResource(R.drawable.marcador_azul);
-}
-		else{
-			
+		if (i == 1) {
+			iv01.setImageResource(R.drawable.marcador_branco);
+			iv02.setImageResource(R.drawable.marcador_azul);
+			ivBanner.setImageResource(R.drawable.teste);
+		} else if (i == 2) {
+			iv02.setImageResource(R.drawable.marcador_branco);
+			iv03.setImageResource(R.drawable.marcador_azul);
+			ivBanner.setImageResource(R.drawable.teste);
+		} else if (i == 3) {
+			iv03.setImageResource(R.drawable.marcador_branco);
+			iv04.setImageResource(R.drawable.marcador_azul);
+			ivBanner.setImageResource(R.drawable.teste);
+		} else if (i == 4) {
+			iv04.setImageResource(R.drawable.marcador_branco);
+			iv05.setImageResource(R.drawable.marcador_azul);
+			ivBanner.setImageResource(R.drawable.teste);
 		}
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.instrucoes, menu);
 		return true;
 	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		if (id == R.id.acao_proximo) {
+			next();
 		}
 		return super.onOptionsItemSelected(item);
 	}

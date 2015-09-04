@@ -3,9 +3,10 @@
     tools:context="com.senai.easteregg.InstrucoesActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/acao_proximo"
         android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:icon="@drawable/ic_action_seta"
+        android:showAsAction="ifRoom"
+        android:title="Próximo"/>
 
 </menu>

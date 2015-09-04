@@ -60,6 +60,7 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a0007;
+        public static final int acao_proximo=0x7f0a003b;
         public static final int action_settings=0x7f0a0037;
         public static final int app_picker_list_item_icon=0x7f0a0014;
         public static final int app_picker_list_item_label=0x7f0a0015;
