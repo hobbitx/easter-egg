@@ -18,8 +18,6 @@ package com.google.zxing.client.android.book;
 
 import java.util.Locale;
 
-import com.senai.easteregg.R;
-
 import android.content.Context;
 import android.graphics.Typeface;
 import android.text.Spannable;
@@ -28,6 +26,8 @@ import android.text.style.StyleSpan;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.senai.easteregg.R;
 
 /**
  * A list item which displays the page number and snippet of this search result.

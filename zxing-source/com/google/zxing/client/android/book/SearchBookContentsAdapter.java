@@ -18,13 +18,13 @@ package com.google.zxing.client.android.book;
 
 import java.util.List;
 
-import com.senai.easteregg.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import com.senai.easteregg.R;
 
 /**
  * Manufactures list items which represent SBC results.

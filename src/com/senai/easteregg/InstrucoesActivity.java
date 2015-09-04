@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.senai.easteregg.modelo.Instrucoes;
+
 public class InstrucoesActivity extends Activity {
 	private ArrayList<String> textoInstrucoes = new ArrayList<String>();
 	private ArrayList<String> tituloInstrucoes = new ArrayList<String>();

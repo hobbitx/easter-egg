@@ -19,13 +19,13 @@ package com.google.zxing.client.android;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import com.senai.easteregg.R;
-
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+
+import com.senai.easteregg.R;
 
 public final class PreferencesFragment 
     extends PreferenceFragment 

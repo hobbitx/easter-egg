@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.senai.easteregg.R;
-
 import android.app.ListActivity;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageItemInfo;
@@ -33,6 +31,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
+
+import com.senai.easteregg.R;
 
 /**
  * Loads a list of packages installed on the device asynchronously.

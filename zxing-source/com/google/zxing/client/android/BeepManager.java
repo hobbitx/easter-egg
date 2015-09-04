@@ -18,8 +18,6 @@ package com.google.zxing.client.android;
 
 import java.io.IOException;
 
-import com.senai.easteregg.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -29,6 +27,8 @@ import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.senai.easteregg.R;
 
 /**
  * Manages beeps and vibrations for {@link CaptureActivity}.

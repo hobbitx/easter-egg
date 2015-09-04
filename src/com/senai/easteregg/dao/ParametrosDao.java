@@ -2,13 +2,13 @@ package com.senai.easteregg.dao;
 
 import java.util.ArrayList;
 
-import com.senai.easteregg.modelo.Parametros;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.senai.easteregg.modelo.Parametros;
 
 
 public class ParametrosDao {

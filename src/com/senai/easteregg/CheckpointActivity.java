@@ -4,9 +4,6 @@ package com.senai.easteregg;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.senai.easteregg.dao.ParametrosDao;
-import com.senai.easteregg.modelo.Parametros;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.senai.easteregg.dao.ParametrosDao;
+import com.senai.easteregg.modelo.Instrucoes;
+import com.senai.easteregg.modelo.Parametros;
 
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;

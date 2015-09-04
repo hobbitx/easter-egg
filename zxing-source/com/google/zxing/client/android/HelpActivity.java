@@ -16,12 +16,12 @@
 
 package com.google.zxing.client.android;
 
-import com.senai.easteregg.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebView;
+
+import com.senai.easteregg.R;
 
 /**
  * An HTML-based help screen.
