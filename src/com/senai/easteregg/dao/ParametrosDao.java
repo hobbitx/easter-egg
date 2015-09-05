@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 
+
 public class ParametrosDao {
 
 	private SQLiteDatabase database;
@@ -58,16 +59,18 @@ public class ParametrosDao {
 
 	}
 
-	public Parametros buscar(String descricao) {
-		Parametros t = null;
-		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunas,AppDatabase.COLUMN_DESCRICAO + " = ?",
-				new String[] {String.valueOf(descricao)},null,null,null);
+	public ArrayList<Parametros> buscar() {
+		ArrayList<Parametros> feitos = new ArrayList<Parametros>();
+		Parametros t = new Parametros();
+		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunasD,null,null,null,null, null);
 		if(cursor.moveToFirst()){
-			t = cursoToTarefa(cursor);
-			
-		}
+			while (!cursor.isAfterLast()) {
+				t = cursorToParametros(cursor);
+				feitos.add(t);
+				cursor.moveToNext();
+		}}
 		cursor.close();
-		return t;
+		return feitos;
 	}
 	public ArrayList<Parametros> buscarFeitos() {
 		ArrayList<Parametros> feitos = new ArrayList<Parametros>();
@@ -84,11 +87,11 @@ public class ParametrosDao {
 		cursor.close();
 		return feitos;
 	}
+	
+	@SuppressLint("UseValueOf")
 	private Parametros cursorToParametros(Cursor cursor) {
 		Parametros t = new Parametros(
-				cursor.getInt(0),
-				cursor.getString(1),
-				cursor.getString(2)
+				null, cursor.getString(0), null
 				);
 		return t;
 	}
@@ -98,24 +101,13 @@ public class ParametrosDao {
 		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunas,AppDatabase.COLUMN_ID + " = ?",
 				new String[] {String.valueOf(id)},null,null,null);
 		if(cursor.moveToFirst()){
-			t = cursoToTarefa(cursor);
+			t = cursorToParametros(cursor);
 			
 		}
 		cursor.close();
 		return t;
 	}
 
-	@SuppressLint("UseValueOf")
-	private Parametros cursoToTarefa(Cursor cursor) {
-		
 	
-		
-		Parametros t = new Parametros(
-				cursor.getInt(0),
-				cursor.getString(1),
-				cursor.getString(2)		
-				);
-		
-		return t;
-	}
+	
 }

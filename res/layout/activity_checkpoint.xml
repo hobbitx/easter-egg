@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     android:orientation="vertical"
     tools:context="com.senai.easteregg.activity.CheckpointActivity" >
 
@@ -38,43 +39,56 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
->
+            android:layout_marginTop="10dp" >
 
             <ImageView
                 android:id="@+id/iv_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/negra" />
+                android:src="@drawable/marcador_azul" />
 
             <ImageView
                 android:id="@+id/iv_02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/branco" />
+                android:src="@drawable/marcador_branco" />
 
             <ImageView
                 android:id="@+id/iv_03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/branco" />
+                android:src="@drawable/marcador_branco" />
 
             <ImageView
                 android:id="@+id/iv_04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/branco" />
+                android:src="@drawable/marcador_branco" />
 
             <ImageView
                 android:id="@+id/iv_05"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_marginLeft="10dp"
-                android:src="@drawable/branco" />
+                android:src="@drawable/marcador_branco" />
+
+            <ImageView
+                android:id="@+id/iv_06"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
+
+            <ImageView
+                android:id="@+id/iv_07"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
         </LinearLayout>
 
         <LinearLayout
@@ -110,14 +124,11 @@
 
             <Button
                 android:id="@+id/bt_capturar"
-                android:onClick="leitura"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:onClick="leitura"
                 android:text="@string/botao_capturar" />
-
-        </LinearLayout>
-
         </LinearLayout>
     </LinearLayout>
 
-
+</LinearLayout>

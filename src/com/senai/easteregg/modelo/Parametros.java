@@ -19,9 +19,11 @@ public class Parametros {
 
 	}
 	
+	
+
 	@Override
 	public String toString() {
-		return getDescricao() + " - "  + getValor();
+		return getDescricao();
 	}
 
 	public Integer getId() {
