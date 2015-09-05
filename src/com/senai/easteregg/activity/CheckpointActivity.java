@@ -3,11 +3,6 @@ package com.senai.easteregg.activity;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.senai.easteregg.R;
-import com.senai.easteregg.dao.ParametrosDao;
-import com.senai.easteregg.modelo.Instrucoes;
-import com.senai.easteregg.modelo.Parametros;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,6 +15,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.senai.easteregg.R;
+import com.senai.easteregg.dao.ParametrosDao;
+import com.senai.easteregg.modelo.Instrucoes;
+import com.senai.easteregg.modelo.Parametros;
 
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;
@@ -39,6 +39,10 @@ public class CheckpointActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkpoint);
+	IniciarJogo();
+	}
+	
+	private void IniciarJogo() {
 		ins = new Instrucoes();
 		instrucoes = ins.instrucoes;
 		dicas = ins.dicas;
@@ -55,6 +59,7 @@ public class CheckpointActivity extends Activity {
 		tv_senai = (TextView) findViewById(R.id.tv_senai);
 		tv_titulo = (TextView) findViewById(R.id.tv_titulo);
 		bt_capturar = (Button) findViewById(R.id.bt_capturar);
+
 	}
 
 	public void leitura(View view) {
@@ -146,6 +151,9 @@ public class CheckpointActivity extends Activity {
 		} else {
 			alerta();
 		}
+		pq.setDescricao("Local");
+		pq.setValor(""+conta);
+		dao.salvar(pq);
 		mudarImagens(conta);
 	}
 
@@ -214,6 +222,14 @@ public class CheckpointActivity extends Activity {
 		getMenuInflater().inflate(R.menu.checkpoint, menu);
 		return true;
 	}
+	private void instrucoes() {
+		Intent intent = new Intent(this, InstrucoesActivity.class);
+		startActivity(intent);
+	}
+	private void regras() {
+		Intent intent = new Intent(this, InstrucoesActivity.class);
+		startActivity(intent);
+	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -221,7 +237,8 @@ public class CheckpointActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+		if (id == R.id.action_instrucoes) {
+			instrucoes();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

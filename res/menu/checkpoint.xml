@@ -3,9 +3,14 @@
     tools:context="com.senai.easteregg.CheckpointActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_instrucoes"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="Instruções"/>
+        <item
+        android:id="@+id/action_regras"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Regras"/>
 
 </menu>

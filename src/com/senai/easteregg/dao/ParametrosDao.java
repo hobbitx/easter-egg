@@ -87,7 +87,6 @@ public class ParametrosDao {
 		cursor.close();
 		return feitos;
 	}
-	
 	@SuppressLint("UseValueOf")
 	private Parametros cursorToParametros(Cursor cursor) {
 		Parametros t = new Parametros(

@@ -65,8 +65,10 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a0007;
-        public static final int acao_proximo=0x7f0a003d;
-        public static final int action_settings=0x7f0a0039;
+        public static final int acao_proximo=0x7f0a003e;
+        public static final int action_instrucoes=0x7f0a0039;
+        public static final int action_regras=0x7f0a003a;
+        public static final int action_settings=0x7f0a003f;
         public static final int app_picker_list_item_icon=0x7f0a0016;
         public static final int app_picker_list_item_label=0x7f0a0017;
         public static final int barcode_image_view=0x7f0a001d;
@@ -92,11 +94,11 @@ public final class R {
         public static final int iv_07=0x7f0a000e;
         public static final int iv_banner=0x7f0a0013;
         public static final int launch_product_query=0x7f0a0003;
-        public static final int menu_encode=0x7f0a003a;
+        public static final int menu_encode=0x7f0a003b;
         public static final int menu_help=0x7f0a0038;
         public static final int menu_history=0x7f0a0036;
-        public static final int menu_history_clear_text=0x7f0a003c;
-        public static final int menu_history_send=0x7f0a003b;
+        public static final int menu_history_clear_text=0x7f0a003d;
+        public static final int menu_history_send=0x7f0a003c;
         public static final int menu_settings=0x7f0a0037;
         public static final int menu_share=0x7f0a0035;
         public static final int meta_text_view=0x7f0a0022;
