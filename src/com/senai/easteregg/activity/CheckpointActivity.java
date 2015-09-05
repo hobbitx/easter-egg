@@ -4,6 +4,11 @@ package com.senai.easteregg.activity;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.senai.easteregg.R;
+import com.senai.easteregg.dao.ParametrosDao;
+import com.senai.easteregg.modelo.Instrucoes;
+import com.senai.easteregg.modelo.Parametros;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,11 +17,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.senai.easteregg.R;
-import com.senai.easteregg.dao.ParametrosDao;
-import com.senai.easteregg.modelo.Instrucoes;
-import com.senai.easteregg.modelo.Parametros;
 
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;
@@ -65,6 +65,7 @@ public class CheckpointActivity extends Activity {
 			if(data.getStringExtra("SCAN_FORMAT").equals("QR_CODE")){
 				resultado = data.getStringExtra("SCAN_RESULT");
 				verificarCheckpoint();
+				
 		}
 			else {
 				Toast.makeText(this, "QR Code invalido", Toast.LENGTH_LONG).show();
@@ -75,10 +76,10 @@ public class CheckpointActivity extends Activity {
 	
 	private void verificarCheckpoint() {
 		ParametrosDao dao = new ParametrosDao(this);
-		Parametros pq = null;
+		Parametros pq = new Parametros();
 		
 		if(resultado.equals("inicio")){
-			pq.setDescricao(resultado);
+			pq.setDescricao(""+resultado);
 			pq.setValor("1");
 			gerarDica();
 			tv_dica.setText(dica);
@@ -89,6 +90,7 @@ public class CheckpointActivity extends Activity {
 			pq.setDescricao(resultado);
 			pq.setValor("1");
 			gerarDica();
+			buscarFeitos();
 			for (int i = 0; i <Feitos.size(); i++) {
 				
 			a = Feitos.get(i).toString();
@@ -98,7 +100,7 @@ public class CheckpointActivity extends Activity {
 				dao.salvar(pq);
 			}
 			else{
-				
+				 
 			}
 			}
 			
@@ -110,9 +112,7 @@ public class CheckpointActivity extends Activity {
 	
 	private void buscarFeitos() {
 		ParametrosDao dao = new ParametrosDao(this);
-		Parametros p = null;
-		String ver;
-		Feitos = dao.buscarFeitos("1");
+		Feitos = dao.buscarFeitos();
 		
 		}
 	
