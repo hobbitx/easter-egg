@@ -89,7 +89,7 @@ public class CheckpointActivity extends Activity {
 		ParametrosDao dao = new ParametrosDao(this);
 		Parametros pq = new Parametros();
 		Toast.makeText(this, "Contagem = " + conta, Toast.LENGTH_LONG).show();
-		if (conta == 6) {
+		if (conta == 5) {
 			String dicaFim = "Toda história tem um fim, mas na vida todo final é um novo começo. Que tal começar?";
 			tv_dica.setText(dicaFim);
 		} else if (resultado.equals("inicio")) {
