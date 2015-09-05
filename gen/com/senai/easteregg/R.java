@@ -83,13 +83,13 @@ public final class R {
         public static final int history_detail=0x7f0a002a;
         public static final int history_title=0x7f0a0029;
         public static final int image_view=0x7f0a0027;
-        public static final int iv_01=0x7f0a0009;
-        public static final int iv_02=0x7f0a000a;
-        public static final int iv_03=0x7f0a000b;
-        public static final int iv_04=0x7f0a000c;
-        public static final int iv_05=0x7f0a000d;
-        public static final int iv_06=0x7f0a000e;
-        public static final int iv_07=0x7f0a000f;
+        public static final int iv_01=0x7f0a0008;
+        public static final int iv_02=0x7f0a0009;
+        public static final int iv_03=0x7f0a000a;
+        public static final int iv_04=0x7f0a000b;
+        public static final int iv_05=0x7f0a000c;
+        public static final int iv_06=0x7f0a000d;
+        public static final int iv_07=0x7f0a000e;
         public static final int iv_banner=0x7f0a0013;
         public static final int launch_product_query=0x7f0a0003;
         public static final int menu_encode=0x7f0a003a;
@@ -120,10 +120,10 @@ public final class R {
         public static final int status_view=0x7f0a0026;
         public static final int time_text_view=0x7f0a0020;
         public static final int tv_dica=0x7f0a0011;
-        public static final int tv_imagem=0x7f0a0008;
         public static final int tv_instrucao=0x7f0a0014;
         public static final int tv_proximo=0x7f0a0015;
-        public static final int tv_titulo=0x7f0a0010;
+        public static final int tv_senai=0x7f0a0010;
+        public static final int tv_titulo=0x7f0a000f;
         public static final int type_text_view=0x7f0a001f;
         public static final int viewfinder_view=0x7f0a001b;
     }

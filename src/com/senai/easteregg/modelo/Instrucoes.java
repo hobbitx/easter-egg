@@ -35,4 +35,12 @@ public class Instrucoes {
 			"cantina",
 			"estagios"
 			));
+
+	public ArrayList<String> propaganda = new ArrayList<String>(Arrays.asList(
+			"Além dos cursos técnicos, o SENAI também oferece cursos de Aprendizagem Industrial e Qualificação Profissional.",
+			"O curso de Mecatrônica forma profissionais para atuar em diversos segmentos do mercado, como na Indústria Automobilística e na fabricação de maquinários.",
+			"O SENAI disponibiliza nove cursos na área de Aprendizagem Industrial para os mais diversos setores produtivos.",
+			"O SENAI oferece sete cursos na área de Qualificação Profissional para quem busca preparo ou a atualização para o exercício de funções demandadas pelo mercado de trabalho.",
+			"O curso Técnico de Automação Industrial prepara profissionais preferencialmente para a indústria de processos de fabricação contínuos, como petroquímicas, alimentos e de energia."
+			));
 }

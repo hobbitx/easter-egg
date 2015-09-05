@@ -9,11 +9,14 @@ import com.senai.easteregg.modelo.Instrucoes;
 import com.senai.easteregg.modelo.Parametros;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,14 +24,16 @@ import android.widget.Toast;
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;
 	private ImageView iv01, iv02, iv03, iv04, iv05, iv06, iv07;
-	private TextView tv_dica;
-	private String resultado = "", dica = "", vericacao = "";
+	private TextView tv_dica,tv_senai,tv_titulo;
+	private String resultado = "", dica = "", vericacao = "",propaganda="";
 	private Instrucoes ins;
 	private int conta = 0;
 	private ArrayList<String> instrucoes = new ArrayList<String>();
 	private ArrayList<String> dicas = new ArrayList<String>();
 	private ArrayList<String> controle = new ArrayList<String>();
+	private ArrayList<String> propagandas = new ArrayList<String>();
 	private ArrayList<Parametros> Feitos = new ArrayList<Parametros>();
+	private Button bt_capturar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +43,7 @@ public class CheckpointActivity extends Activity {
 		instrucoes = ins.instrucoes;
 		dicas = ins.dicas;
 		controle = ins.controle;
-
+		propagandas = ins.propaganda;
 		iv01 = (ImageView) findViewById(R.id.iv_01);
 		iv02 = (ImageView) findViewById(R.id.iv_02);
 		iv03 = (ImageView) findViewById(R.id.iv_03);
@@ -47,6 +52,9 @@ public class CheckpointActivity extends Activity {
 		iv06 = (ImageView) findViewById(R.id.iv_06);
 		iv07 = (ImageView) findViewById(R.id.iv_07);
 		tv_dica = (TextView) findViewById(R.id.tv_dica);
+		tv_senai = (TextView) findViewById(R.id.tv_senai);
+		tv_titulo = (TextView) findViewById(R.id.tv_titulo);
+		bt_capturar = (Button) findViewById(R.id.bt_capturar);
 	}
 
 	public void leitura(View view) {
@@ -86,20 +94,35 @@ public class CheckpointActivity extends Activity {
 	}
 
 	private void verificarCheckpoint() {
+		tv_titulo.setText("Você Sabia?");
 		ParametrosDao dao = new ParametrosDao(this);
 		Parametros pq = new Parametros();
-		Toast.makeText(this, "Contagem = " + conta, Toast.LENGTH_LONG).show();
+		//Toast.makeText(this, "Contagem = " + conta, Toast.LENGTH_LONG).show();
 		if (conta == 5) {
+			String propagandaFim = "O curso Técnico em Informática tem como objetivo formar profissionais com "
+					+ "habilitação Técnica de Nível Médio em Informática, "
+					+ "voltado para a área de programação de computadores.";
 			String dicaFim = "Toda história tem um fim, mas na vida todo final é um novo começo. Que tal começar?";
 			tv_dica.setText(dicaFim);
-		} else if (resultado.equals("inicio")) {
+			tv_senai.setText(propagandaFim);
+			mudarImagens(conta);
+			conta++;
+		} else if (resultado.equals("inicio") && conta == 0) {
 			pq.setDescricao("" + resultado);
 			pq.setValor("1");
 			gerarDica();
 			tv_dica.setText(dica);
+			tv_senai.setText(propaganda);
 			dao.salvar(pq);
 
-		} else if (resultado.equals(vericacao)) {// banheiro}
+		} else if (resultado.equals("inicio") && conta == 6) {
+			tv_titulo.setText("Uhulll!!!");
+			tv_senai.setText(" Você Completou todo o trajeto do jogo... ");
+			tv_dica.setText("Seja Bem Vindo ao Seleto Grupo dos conquistadores de tesouros...");
+			bt_capturar.setEnabled(false);
+		}
+		
+		else if (resultado.equals(vericacao)) {// banheiro}
 			String a = "";
 			pq.setDescricao(resultado);
 			pq.setValor("1");
@@ -108,20 +131,20 @@ public class CheckpointActivity extends Activity {
 			for (int i = 0; i < Feitos.size(); i++) {
 
 				a = Feitos.get(i).toString();
-				Toast.makeText(this, "A = " + a, Toast.LENGTH_SHORT).show();
+				//Toast.makeText(this, "A = " + a, Toast.LENGTH_SHORT).show();
 				if (!vericacao.equals(a)) {
 					tv_dica.setText(dica);
+					tv_senai.setText(propaganda);
 					dao.salvar(pq);
 
 				} else {
-					Toast.makeText(this, "Igual: " + a, Toast.LENGTH_SHORT)
-							.show();
+					//Toast.makeText(this, "Igual: " + a, Toast.LENGTH_SHORT)
+						//	.show();
 				}
 
 			}
 		} else {
-			Toast.makeText(this, "Checkpoint invalido", Toast.LENGTH_LONG)
-					.show();
+			alerta();
 		}
 		mudarImagens(conta);
 	}
@@ -136,11 +159,13 @@ public class CheckpointActivity extends Activity {
 		int r = new Random().nextInt(dicas.size());
 		dica = dicas.get(r);
 		vericacao = controle.get(r);
+		propaganda = propagandas.get(r);
 		dicas.remove(r);
+		propagandas.remove(r);
 		controle.remove(r);
-		Toast.makeText(this, "dica = " + r, Toast.LENGTH_LONG).show();
-		Toast.makeText(this, "Verificacao: " + vericacao, Toast.LENGTH_SHORT)
-				.show();
+		//Toast.makeText(this, "dica = " + r, Toast.LENGTH_LONG).show();
+		//Toast.makeText(this, "Verificacao: " + vericacao, Toast.LENGTH_SHORT)
+				//.show();
 		conta++;
 	}
 
@@ -168,7 +193,21 @@ public class CheckpointActivity extends Activity {
 			iv07.setImageResource(R.drawable.marcador_azul);
 		}
 	}
+	private void alerta() {
+		AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+		dialogBuilder
+				.setTitle("Você esta no lugar errado!!")
+				.setMessage("Leia a dica novamente")
+				.setCancelable(false)
+				.setPositiveButton("OK",
+						new DialogInterface.OnClickListener() {
 
+							public void onClick(DialogInterface arg0, int arg1) {
+								
+							}
+						})
+					.create().show();
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

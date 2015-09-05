@@ -14,26 +14,14 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/end"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/tv_imagem"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Imagem"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+           
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#000000"
-            android:orientation="vertical" >
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -104,16 +92,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="20dp"
-                android:text="Titulo da dica"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
+                  <TextView
+                android:id="@+id/tv_senai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceMedium" />
             <TextView
                 android:id="@+id/tv_dica"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="15dp"
-                android:text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                android:text="O jogo começou, Vá até o ponto inicial e leia o primeiro QRCode "
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
 

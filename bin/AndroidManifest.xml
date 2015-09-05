@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -43,7 +44,8 @@
         </activity>
         <activity
             android:name=".activity.CheckpointActivity"
-            android:label="@string/title_activity_checkpoint" >
+            android:label="@string/title_activity_checkpoint"
+            android:launchMode="singleTop" >
              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
