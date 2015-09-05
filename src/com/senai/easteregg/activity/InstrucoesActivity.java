@@ -1,4 +1,4 @@
-package com.senai.easteregg;
+package com.senai.easteregg.activity;
 
 import java.util.ArrayList;
 
@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.senai.easteregg.R;
 import com.senai.easteregg.modelo.Instrucoes;
 
 public class InstrucoesActivity extends Activity {
@@ -17,7 +19,7 @@ public class InstrucoesActivity extends Activity {
 	private ArrayList<String> tituloInstrucoes = new ArrayList<String>();
 	private Instrucoes instrucoes;
 	private Integer posicao = 0;
-	private TextView tvInstrucao, tvTituloIstrucao;
+	private TextView tvInstrucao, tvTituloIstrucao, tvProximo;
 	private ImageView iv01, iv02, iv03, iv04, iv05, ivBanner;
 
 	@Override
@@ -27,6 +29,7 @@ public class InstrucoesActivity extends Activity {
 
 		tvInstrucao = (TextView) findViewById(R.id.tv_instrucao);
 		tvTituloIstrucao = (TextView) findViewById(R.id.tv_titulo);
+		tvProximo = (TextView) findViewById(R.id.tv_proximo);
 
 		iv01 = (ImageView) findViewById(R.id.iv_01);
 		iv02 = (ImageView) findViewById(R.id.iv_02);
@@ -63,19 +66,21 @@ public class InstrucoesActivity extends Activity {
 		if (i == 1) {
 			iv01.setImageResource(R.drawable.marcador_branco);
 			iv02.setImageResource(R.drawable.marcador_azul);
-			ivBanner.setImageResource(R.drawable.teste);
+			ivBanner.setImageResource(R.drawable.qrcode);
 		} else if (i == 2) {
 			iv02.setImageResource(R.drawable.marcador_branco);
 			iv03.setImageResource(R.drawable.marcador_azul);
-			ivBanner.setImageResource(R.drawable.teste);
+			ivBanner.setImageResource(R.drawable.savethedate);
 		} else if (i == 3) {
 			iv03.setImageResource(R.drawable.marcador_branco);
 			iv04.setImageResource(R.drawable.marcador_azul);
-			ivBanner.setImageResource(R.drawable.teste);
+			ivBanner.setImageResource(R.drawable.tesouro);
 		} else if (i == 4) {
 			iv04.setImageResource(R.drawable.marcador_branco);
 			iv05.setImageResource(R.drawable.marcador_azul);
-			ivBanner.setImageResource(R.drawable.teste);
+			ivBanner.setImageResource(R.drawable.end);
+			tvProximo.setText("JOGAR");
+			
 		}
 	}
 

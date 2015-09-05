@@ -1,4 +1,4 @@
-package com.senai.easteregg;
+package com.senai.easteregg.activity;
 
 
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.senai.easteregg.R;
 import com.senai.easteregg.dao.ParametrosDao;
 import com.senai.easteregg.modelo.Instrucoes;
 import com.senai.easteregg.modelo.Parametros;

@@ -1,5 +1,7 @@
-package com.senai.easteregg;
+package com.senai.easteregg.activity;
 
+
+import com.senai.easteregg.R;
 
 import android.app.Activity;
 import android.os.Bundle;

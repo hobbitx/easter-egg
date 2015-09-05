@@ -48,15 +48,20 @@ public final class R {
     }
     public static final class drawable {
         public static final int branco=0x7f020000;
-        public static final int ic_action_seta=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int launcher_icon=0x7f020003;
-        public static final int lupa=0x7f020004;
-        public static final int marcador_azul=0x7f020005;
-        public static final int marcador_branco=0x7f020006;
-        public static final int negra=0x7f020007;
-        public static final int share_via_barcode=0x7f020008;
-        public static final int teste=0x7f020009;
+        public static final int end=0x7f020001;
+        public static final int ic_action_seta=0x7f020002;
+        public static final int ic_launcher=0x7f020003;
+        public static final int launcher_icon=0x7f020004;
+        public static final int lupa=0x7f020005;
+        public static final int marcador_azul=0x7f020006;
+        public static final int marcador_branco=0x7f020007;
+        public static final int negra=0x7f020008;
+        public static final int qrcode=0x7f020009;
+        public static final int savethedate=0x7f02000a;
+        public static final int seja_bem_vindo=0x7f02000b;
+        public static final int share_via_barcode=0x7f02000c;
+        public static final int tesouro=0x7f02000d;
+        public static final int teste=0x7f02000e;
     }
     public static final class id {
         public static final int LinearLayout1=0x7f0a0007;
