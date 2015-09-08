@@ -37,6 +37,7 @@
             android:windowSoftInputMode="stateAlwaysHidden" >
             
         </activity>
+        
         <activity
             android:name=".activity.InstrucoesActivity"
             android:label="@string/title_activity_instrucoes" >

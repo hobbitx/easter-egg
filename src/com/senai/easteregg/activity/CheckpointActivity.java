@@ -33,6 +33,7 @@ public class CheckpointActivity extends Activity {
 	private ArrayList<String> controle = new ArrayList<String>();
 	private ArrayList<String> propagandas = new ArrayList<String>();
 	private ArrayList<Parametros> Feitos = new ArrayList<Parametros>();
+	private Parametros progresso = new Parametros();
 	private Button bt_capturar;
 
 	@Override
@@ -164,17 +165,33 @@ public class CheckpointActivity extends Activity {
 	}
 
 	private void gerarDica() {
+		int aux = 0;
+		ParametrosDao dao = new ParametrosDao(this);
+		Parametros t = new Parametros();
+		
+		
+		if(aux == 1){
 		int r = new Random().nextInt(dicas.size());
-		dica = dicas.get(r);
-		vericacao = controle.get(r);
-		propaganda = propagandas.get(r);
-		dicas.remove(r);
-		propagandas.remove(r);
-		controle.remove(r);
-		//Toast.makeText(this, "dica = " + r, Toast.LENGTH_LONG).show();
-		//Toast.makeText(this, "Verificacao: " + vericacao, Toast.LENGTH_SHORT)
-				//.show();
-		conta++;
+		t.setDescricao("dica");
+		progresso = dao.atualizar(t);
+		dica = progresso.getValor().toString();
+		tv_dica.setText(dica);
+		
+		}
+		else if(aux == 0){
+			int r = new Random().nextInt(dicas.size());
+			dica = dicas.get(r);
+			vericacao = controle.get(r);
+			propaganda = propagandas.get(r);
+			dicas.remove(r);
+			propagandas.remove(r);
+			controle.remove(r);
+			conta++;
+			t.setDescricao("dica");
+			t.setValor(""+dica);
+			dao.salvar(t);
+			aux = 1;
+			}
 	}
 
 	private void mudarImagens(int i) {
