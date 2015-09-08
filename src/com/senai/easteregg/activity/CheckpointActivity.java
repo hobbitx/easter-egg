@@ -104,7 +104,7 @@ public class CheckpointActivity extends Activity {
 		ParametrosDao dao = new ParametrosDao(this);
 		Parametros pq = new Parametros();
 		//Toast.makeText(this, "Contagem = " + conta, Toast.LENGTH_LONG).show();
-		if (conta == 5) {
+		if (conta == 5 && resultado.equals(vericacao)) {
 			String propagandaFim = "O curso Técnico em Informática tem como objetivo formar profissionais com "
 					+ "habilitação Técnica de Nível Médio em Informática, "
 					+ "voltado para a área de programação de computadores.";
