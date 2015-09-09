@@ -35,23 +35,24 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" >
-            
         </activity>
-        
         <activity
             android:name=".activity.InstrucoesActivity"
             android:label="@string/title_activity_instrucoes" >
-           
         </activity>
         <activity
             android:name=".activity.CheckpointActivity"
             android:label="@string/title_activity_checkpoint"
             android:launchMode="singleTop" >
-             <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.senai.easteregg.activity.Activity_contagem_regressiva"
+            android:label="@string/title_activity_activity_contagem_regressiva" >
         </activity>
     </application>
 
