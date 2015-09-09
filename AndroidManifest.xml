@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.senai.easteregg.activity.Activity_contagem_regressiva"
+            android:name="com.senai.easteregg.activity.ContagemRegressivaActivity"
             android:label="@string/title_activity_activity_contagem_regressiva" >
         </activity>
     </application>

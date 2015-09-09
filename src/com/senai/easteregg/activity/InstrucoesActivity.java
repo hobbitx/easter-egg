@@ -3,11 +3,11 @@ package com.senai.easteregg.activity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -50,10 +50,11 @@ public class InstrucoesActivity extends Activity {
 	public void next(View v) {
 		next();
 	}
-
+	
 	public void next() {
 		if (posicao >= 4) {
-			// chamar outra tela
+			Intent i = new Intent(this, ContagemRegressivaActivity.class);
+			startActivity(i);
 		} else {
 			posicao++;
 			tvInstrucao.setText(textoInstrucoes.get(posicao));

@@ -13,7 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class Activity_contagem_regressiva extends Activity {
+public class ContagemRegressivaActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
