@@ -76,7 +76,6 @@ public final class R {
         public static final int action_instrucoes=0x7f0a0049;
         public static final int action_proximo=0x7f0a0053;
         public static final int action_regras=0x7f0a0048;
-        public static final int action_settings=0x7f0a0054;
         public static final int action_voltar=0x7f0a004f;
         public static final int app_picker_list_item_icon=0x7f0a0029;
         public static final int app_picker_list_item_label=0x7f0a002a;

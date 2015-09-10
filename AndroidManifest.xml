@@ -59,7 +59,7 @@
             android:label="@string/title_activity_creditos" >
         </activity>
         <activity
-            android:name=".RegrasActivity"
+            android:name="com.senai.easteregg.activity.RegrasActivity"
             android:label="@string/title_activity_regras" >
         </activity>
     </application>

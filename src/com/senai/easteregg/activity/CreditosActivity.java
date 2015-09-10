@@ -30,7 +30,7 @@ public class CreditosActivity extends Activity {
 		startActivity(intent);
 	}
 	private void regras() {
-		Intent intent = new Intent(this, InstrucoesActivity.class);
+		Intent intent = new Intent(this, RegrasActivity.class);
 		startActivity(intent);
 	}
 	private void creditos() {

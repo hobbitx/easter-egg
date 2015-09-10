@@ -96,7 +96,7 @@ public class InstrucoesActivity extends Activity {
 		startActivity(intent);
 	}
 	private void regras() {
-		Intent intent = new Intent(this, InstrucoesActivity.class);
+		Intent intent = new Intent(this, RegrasActivity.class);
 		startActivity(intent);
 	}
 	private void creditos() {
@@ -116,11 +116,7 @@ public class InstrucoesActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_instrucoes) {
-			instrucoes();
-			return true;
-		}
-		else if (id == R.id.action_creditos) {
+		 if (id == R.id.action_creditos) {
 			creditos();
 			return true;
 		}

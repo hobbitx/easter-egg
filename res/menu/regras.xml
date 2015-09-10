@@ -2,10 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.senai.easteregg.RegrasActivity" >
 
-    <item
-        android:id="@+id/action_settings"
+      <item
+        android:id="@+id/action_voltar"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="Voltar ao jogo"/>
+          <item
+        android:id="@+id/action_instrucoes"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_instrucoes"/>
+        <item
+        android:id="@+id/action_creditos"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_creditos"/>
 
 </menu>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.senai.easteregg.RegrasActivity" >
+    tools:context="com.senai.easteregg.activity.RegrasActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
