@@ -20,43 +20,20 @@
             android:src="@drawable/seja_bem_vindo" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
-        android:orientation="vertical" >
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="A Equipe Desenvolvedora responsável adverte:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#242424"
+        android:textStyle="italic" />
 
-        <ScrollView
-            android:id="@+id/scrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/tv_titulo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:text="A Equipe Desenvolvedora responsável adverte:"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="#242424"
-                    android:textStyle="italic" />
-
-                <ListView
+    <ListView
         android:id="@+id/lv_regras"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-      
+        android:layout_height="wrap_content" >
     </ListView>
-            </LinearLayout>
-
-        </ScrollView>
-    </LinearLayout>
 
 </LinearLayout>

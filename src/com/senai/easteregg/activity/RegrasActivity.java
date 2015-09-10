@@ -19,17 +19,17 @@ import android.widget.ListView;
 public class RegrasActivity extends Activity {
 	private ListView lv_regras;
 	private ArrayList<String> listaRegras = new ArrayList<String>(Arrays.asList(
-	"É proibido participar do jogo mais de uma vez.",
-	"O aplicativo não está livre de erros ou bugs durante o decorrer do jogo.",
-	"É proibido manipular o código desse aplicativo para outros fins,"
+	"1. É proibido participar do jogo mais de uma vez.",
+	"2. O aplicativo não está livre de erros ou bugs durante o decorrer do jogo.",
+	"3. É proibido manipular o código desse aplicativo para outros fins,"
 	+ "senão para a participação no Projeto SENAI Casa Aberta.",
-	"A equipe desenvolvedora não é responsável por qualquer dano direto, indireto, acidental,"
+	"4. A equipe desenvolvedora não é responsável por qualquer dano direto, indireto, acidental,"
 	+ " excepcional ou resultante do uso ou inaptidão do desfrute do seu aplicativo."
 	+ " Quaisquer dúvidas, informações, suporte ou apoio técnico para o aplicativo estarão"
 	+ " disponíveis até às 21 horas (horário de Brasília) do dia 11 de setembro de 2015, "
 	+ "no SENAI Euvaldo Lodi, 2º andar, sala 210C. Este aplicativo é distribuído gratuitamente.",
-	"A Equipe Desenvolvedora reserva o direito de não impor ônus aos seus usuários, assim como manter seu aplicativo livre de anúncios, mídia e publicidade de terceiros. ",
-	"Ao utilizar esse aplicativo o usuário concorda com todos os termos empregados pela Equipe Desenvolvedora."                    
+	"5. A Equipe Desenvolvedora reserva o direito de não impor ônus aos seus usuários, assim como manter seu aplicativo livre de anúncios, mídia e publicidade de terceiros. ",
+	"6. Ao utilizar esse aplicativo o usuário concorda com todos os termos empregados pela Equipe Desenvolvedora."                    
 ));
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
