@@ -91,12 +91,52 @@ public class InstrucoesActivity extends Activity {
 		return true;
 	}
 
+	private void instrucoes() {
+		Intent intent = new Intent(this, InstrucoesActivity.class);
+		startActivity(intent);
+	}
+	private void regras() {
+		Intent intent = new Intent(this, InstrucoesActivity.class);
+		startActivity(intent);
+	}
+	private void creditos() {
+		Intent i = new Intent(this, CreditosActivity.class);
+		startActivity(i);
+
+	}
+	private void voltar() {
+		Intent i = new Intent(this, CheckpointActivity.class);
+		startActivity(i);
+
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.acao_proximo) {
-			next();
+		if (id == R.id.action_instrucoes) {
+			instrucoes();
+			return true;
 		}
+		else if (id == R.id.action_creditos) {
+			creditos();
+			return true;
+		}
+		else if (id == R.id.action_regras) {
+			
+			return true;
+		}
+else if (id == R.id.action_voltar) {
+			voltar();
+			return true;
+		}
+		
+		
 		return super.onOptionsItemSelected(item);
 	}
 }
+
+
+	

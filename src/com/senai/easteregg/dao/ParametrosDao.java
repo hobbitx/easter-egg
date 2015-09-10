@@ -93,7 +93,7 @@ public class ParametrosDao {
 		ArrayList<Parametros> feitos = new ArrayList<Parametros>();
 		Parametros t = new Parametros();
 		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunasV,
-				AppDatabase.COLUMN_VALOR + " = ?", new String[] { "1" }, null,
+				AppDatabase.COLUMN_DESCRICAO + " = ?", new String[] { "dica" }, null,
 				null, null);
 		if (cursor.moveToFirst()) {
 
@@ -104,6 +104,22 @@ public class ParametrosDao {
 		cursor.close();
 
 		return feitos;
+	}
+	public String buscarValores(String n) {
+		ArrayList<Parametros> feitos = new ArrayList<Parametros>();
+		Parametros t = new Parametros();
+		Cursor cursor = database.query(AppDatabase.TABLE_PARAMETROS, colunasV,
+				AppDatabase.COLUMN_DESCRICAO + " = ?", new String[] {n}, null,
+				null, null);
+		if (cursor.moveToFirst()) {
+
+			t = cursorToParametros(cursor);
+			feitos.add(t);
+
+		}
+		cursor.close();
+
+		return feitos.get(0).toString();
 	}
 
 	@SuppressLint("UseValueOf")

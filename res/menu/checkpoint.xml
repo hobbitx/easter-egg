@@ -2,15 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.senai.easteregg.CheckpointActivity" >
 
-    <item
-        android:id="@+id/action_instrucoes"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="Instruções"/>
-        <item
+     <item
         android:id="@+id/action_regras"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Regras"/>
+        android:title="@string/action_regras"/>
+      <item
+        android:id="@+id/action_instrucoes"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_instrucoes"/>
+        <item
+        android:id="@+id/action_creditos"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/action_creditos"/>
 
 </menu>

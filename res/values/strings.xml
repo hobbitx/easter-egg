@@ -134,6 +134,9 @@
     <string name="wifi_ssid_label">Nome da Rede</string>
     <string name="wifi_type_label">Tipo</string>
     <string name="app_name">Caça ao Tesouro</string>
+    <string name="action_instrucoes">Instruções</string>
+    <string name="action_regras">Regras</string>
+    <string name="action_creditos">Creditos</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_instrucoes">Instrucões</string>
@@ -141,5 +144,7 @@
     <string name="title_activity_checkpoint">Hora de jogar</string>
     <string name="seja_bem_vindo">Seja bem-vindo</string>
     <string name="title_activity_activity_contagem_regressiva">contagem_regressiva</string>
+    <string name="title_activity_creditos">Tela de creditos</string>
+    <string name="title_activity_regras">Regras</string>
 
 </resources>

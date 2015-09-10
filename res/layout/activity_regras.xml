@@ -4,20 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.senai.easteregg.activity.ContagemRegressivaActivity" >
+    tools:context="com.senai.easteregg.RegrasActivity" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:background="#7a1076"
+        android:background="#8ccaf5"
         android:gravity="top"
         android:orientation="vertical" >
 
         <ImageView
-            android:id="@+id/iv_banner_regressiva"
+            android:id="@+id/iv_banner"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/relogio" />
+            android:src="@drawable/seja_bem_vindo" />
     </LinearLayout>
 
     <LinearLayout
@@ -25,16 +25,14 @@
         android:layout_height="0dp"
         android:layout_margin="20dp"
         android:layout_weight="1"
-        android:orientation="vertical" 
-        android:onClick="hora"
-        android:clickable="true">
+        android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/tv_titulo_regressiva"
+            android:id="@+id/tv_titulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Contagem regressiva"
+            android:text="Título Instrução"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#242424"
             android:textStyle="italic" />
@@ -45,29 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:text="A caçada começará sexta-feira 11 de setembro a partir das 20h!"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#343434"
-            android:textStyle="italic" />
-
-        <TextView
-            android:id="@+id/tv_contador"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:text="00:00:00"
-            android:textColor="#343434"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/tv_fim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:text="Que comecem os jogos..."
+            android:text="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="#343434"
             android:textStyle="italic" />
@@ -81,19 +57,61 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/iv_01"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_azul" />
+
+            <ImageView
+                android:id="@+id/iv_02"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
+
+            <ImageView
+                android:id="@+id/iv_03"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
+
+            <ImageView
+                android:id="@+id/iv_04"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
+
+            <ImageView
+                android:id="@+id/iv_05"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/marcador_branco" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1" >
 
             <TextView
-                android:id="@+id/tv_jogar"
+                android:id="@+id/tv_proximo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:clickable="true"
                 android:gravity="right"
                 android:onClick="next"
-                android:text="JOGAR"
+                android:text="PRÓXIMO"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#7a1076" />
+                android:textColor="@android:color/holo_blue_light" />
         </LinearLayout>
     </LinearLayout>
 

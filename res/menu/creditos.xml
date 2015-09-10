@@ -1,28 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.senai.easteregg.InstrucoesActivity" >
-    <item
+    tools:context="com.senai.easteregg.CreditosActivity" >
+
+     <item
         android:id="@+id/action_regras"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_regras"/>
-   
-        <item
-        android:id="@+id/action_creditos"
+      <item
+        android:id="@+id/action_instrucoes"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_creditos"/>
-         <item
+        android:title="@string/action_instrucoes"/>
+       <item
         android:id="@+id/action_voltar"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="Voltar ao jogo"/>
-          <item
-        android:id="@+id/action_proximo"
-        android:orderInCategory="100"
-        android:icon="@drawable/ic_action_seta"
-        android:showAsAction="ifRoom"
-        android:title="Próximo"/>
-        
-
+   
 </menu>

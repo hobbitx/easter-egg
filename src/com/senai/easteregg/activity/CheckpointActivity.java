@@ -27,23 +27,28 @@ public class CheckpointActivity extends Activity {
 	private TextView tv_dica,tv_senai,tv_titulo;
 	private String resultado = "", dica = "", vericacao = "",propaganda="";
 	private Instrucoes ins;
-	private int conta = 0;
+	private int conta = 0, aux = 0;
 	private ArrayList<String> instrucoes = new ArrayList<String>();
 	private ArrayList<String> dicas = new ArrayList<String>();
 	private ArrayList<String> controle = new ArrayList<String>();
 	private ArrayList<String> propagandas = new ArrayList<String>();
 	private ArrayList<Parametros> Feitos = new ArrayList<Parametros>();
-	private Parametros progresso = new Parametros();
+	private ArrayList<Parametros> progresso = new ArrayList<Parametros>();
 	private Button bt_capturar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkpoint);
+		
 	IniciarJogo();
+	recuperarDica();
 	}
 	
 	private void IniciarJogo() {
+		ParametrosDao dao = new ParametrosDao(this);
+		Parametros t = new Parametros();
+		
 		ins = new Instrucoes();
 		instrucoes = ins.instrucoes;
 		dicas = ins.dicas;
@@ -60,6 +65,31 @@ public class CheckpointActivity extends Activity {
 		tv_senai = (TextView) findViewById(R.id.tv_senai);
 		tv_titulo = (TextView) findViewById(R.id.tv_titulo);
 		bt_capturar = (Button) findViewById(R.id.bt_capturar);
+		
+		
+	
+	}
+	private void recuperarDica() {
+		ParametrosDao dao = new ParametrosDao(this);
+		Parametros t = new Parametros();
+		try{
+			progresso = dao.buscarDica();
+			dica = progresso.get(0).toString();
+			conta = Integer.parseInt(dao.buscarValores("contagem"));
+			vericacao = dao.buscarValores("verificacao");
+			propaganda = dao.buscarValores("propaganda");
+			
+			tv_dica.setText(dica);
+			tv_senai.setText(propaganda);
+			tv_titulo.setText("Você sabia?");
+			mudarImagens(conta);
+		}
+		catch(NullPointerException e){
+			
+		}
+		catch (IndexOutOfBoundsException e) {
+			
+			}
 
 	}
 
@@ -164,36 +194,65 @@ public class CheckpointActivity extends Activity {
 
 	}
 
-	private void gerarDica() {
-		int aux = 0;
-		ParametrosDao dao = new ParametrosDao(this);
-		Parametros t = new Parametros();
-		
-		
-		if(aux == 1){
+	private void gerarDica() {		
 		int r = new Random().nextInt(dicas.size());
-		t.setDescricao("dica");
-		progresso = dao.atualizar(t);
-		dica = progresso.getValor().toString();
-		tv_dica.setText(dica);
+		if(aux == 0){
 		
-		}
-		else if(aux == 0){
-			int r = new Random().nextInt(dicas.size());
 			dica = dicas.get(r);
 			vericacao = controle.get(r);
 			propaganda = propagandas.get(r);
 			dicas.remove(r);
 			propagandas.remove(r);
 			controle.remove(r);
-			conta++;
-			t.setDescricao("dica");
-			t.setValor(""+dica);
-			dao.salvar(t);
+			conta++;	
 			aux = 1;
+			salvarDica();
 			}
+	else{
+		dica = dicas.get(r);
+		vericacao = controle.get(r);
+		propaganda = propagandas.get(r);
+		dicas.remove(r);
+		propagandas.remove(r);
+		controle.remove(r);
+		conta++;
+		atualizardica();
+		
 	}
+	}
+private void atualizardica() {
+	ParametrosDao dao = new ParametrosDao(this);
+	Parametros t = new Parametros();
+	t.setDescricao("dica");
+	t.setValor(""+dica);
+	dao.atualizar(t);
+	t.setDescricao("contagem");
+	t.setValor(""+conta);
+	dao.atualizar(t);
+	t.setDescricao("propaganda");
+	t.setValor(""+propaganda);
+	dao.atualizar(t);
+	t.setDescricao("verificacao");
+	t.setValor(""+vericacao);
+	dao.atualizar(t);
+}
+private void salvarDica() {
+	ParametrosDao dao = new ParametrosDao(this);
+	Parametros t = new Parametros();
+	t.setDescricao("dica");
+	t.setValor(""+dica);
+	dao.salvar(t);
+	t.setDescricao("contagem");
+	t.setValor(""+conta);
+	dao.salvar(t);
+	t.setDescricao("propaganda");
+	t.setValor(""+propaganda);
+	dao.salvar(t);
+	t.setDescricao("verificacao");
+	t.setValor(""+vericacao);
+	dao.salvar(t);
 
+}
 	private void mudarImagens(int i) {
 		if (i == 1) {
 			iv01.setImageResource(R.drawable.marcador_branco);
@@ -247,6 +306,12 @@ public class CheckpointActivity extends Activity {
 		Intent intent = new Intent(this, InstrucoesActivity.class);
 		startActivity(intent);
 	}
+	private void creditos() {
+		Intent i = new Intent(this, CreditosActivity.class);
+		startActivity(i);
+
+	}
+	
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -256,6 +321,14 @@ public class CheckpointActivity extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_instrucoes) {
 			instrucoes();
+			return true;
+		}
+		else if (id == R.id.action_creditos) {
+			creditos();
+			return true;
+		}
+		else if (id == R.id.action_regras) {
+			
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
