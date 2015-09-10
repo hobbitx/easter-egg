@@ -32,187 +32,23 @@
         android:textColor="#242424"
         android:textStyle="italic" />
 
+    
     <LinearLayout
-        android:id="@+id/LinearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="20dp"
-        android:layout_weight="1"
-        android:clickable="true"
-        android:onClick="hora"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/TextView03"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Alex Martins"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/TextView04"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Bruno Faleiro"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/TextView05"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Fabio Alves"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/TextView01"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Fabio Nelson"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/TextView06"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Fabricio Diniz"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tv_n1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Glaycon Xavier"
-                android:textColor="#343434"
-                android:textSize="14dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/tv_n2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Isabelle Guedes"
-                android:textColor="#343434"
-                android:textSize="14dp" />
-
-            <TextView
-                android:id="@+id/tv_n3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Juan Luiz"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/tv_n5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Marcos Assis"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tv_n6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_weight="1"
-                android:gravity="left"
-                android:text="Marcello Fadul"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp" >
-
-            <TextView
-                android:id="@+id/tv_n7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
-                android:gravity="left"
-                android:text="Robert Souza"
-                android:textColor="#343434"
-                android:textSize="15dp" />
-        </LinearLayout>
+       <ListView
+        android:id="@+id/lv_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+      
+    </ListView>
+<ListView
+        android:id="@+id/lv_lista"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+    </ListView>
     </LinearLayout>
-
 </LinearLayout>

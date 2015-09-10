@@ -22,7 +22,7 @@ public class Instrucoes {
 
 	public ArrayList<String> dicas = new ArrayList<String>(Arrays.asList(
 			"A higiene pessoal é muito importante para se ter uma vida saudável. Que tal lavar as mãos antes de continuar?!",
-			"Leitura é a chave para se ter um universo de ideias e uma tempestade de palavras - Pedro Bom Jesus",
+			"Leitura é a chave para se ter um universo de ideias e uma tempestade de palavras - Pedro Bom Jesus ...Faça silencio durante a sua visita",
 			"Essa sala não é destinada à alunos, somente aos Mestres. Sabe onde fica?",
 			"Comer, comer, comer, comer; É o melhor para poder crescer [...]",
 			"A vida profissional começa com uma oportunidade para adquirir experiência. Mas como conseguir uma vaga?"

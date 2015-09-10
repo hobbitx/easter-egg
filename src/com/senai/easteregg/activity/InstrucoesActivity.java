@@ -105,7 +105,7 @@ public class InstrucoesActivity extends Activity {
 
 	}
 	private void voltar() {
-		Intent i = new Intent(this, CheckpointActivity.class);
+		Intent i = new Intent(this, ContagemRegressivaActivity.class);
 		startActivity(i);
 
 	}
@@ -121,7 +121,7 @@ public class InstrucoesActivity extends Activity {
 			return true;
 		}
 		else if (id == R.id.action_regras) {
-			
+			regras();
 			return true;
 		}
 else if (id == R.id.action_voltar) {

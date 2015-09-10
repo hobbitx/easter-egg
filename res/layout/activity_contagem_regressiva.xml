@@ -90,7 +90,7 @@
                 android:layout_gravity="right"
                 android:clickable="true"
                 android:gravity="right"
-                android:onClick="next"
+                android:onClick="jogar"
                 android:text="JOGAR"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#7a1076" />

@@ -38,9 +38,6 @@ public class ContagemRegressivaActivity extends Activity {
 		} else {
 			Toast.makeText(this, "Ainda não é hora do jogo", Toast.LENGTH_LONG)
 					.show();
-			
-			tv_jogar.setEnabled(false);
-			
 			hora();
 			
 		}
@@ -102,7 +99,20 @@ public class ContagemRegressivaActivity extends Activity {
 		hora();
 
 	}
+	public void jogar(View v) {
+		if (horaDoJogo()) {
+			Toast.makeText(this, "Hora do jogo", Toast.LENGTH_LONG).show();
+			Intent i = new Intent(this, CheckpointActivity.class);
+			startActivity(i);
+		} else {
+			Toast.makeText(this, "Ainda não é hora do jogo", Toast.LENGTH_LONG)
+					.show();
+			hora();
+			
+		}
 
+	}
+		
 
 	private boolean horaDoJogo() {
 
@@ -154,7 +164,7 @@ public class ContagemRegressivaActivity extends Activity {
 			return true;
 		}
 		else if (id == R.id.action_regras) {
-			
+			regras();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

@@ -24,7 +24,7 @@ import com.senai.easteregg.modelo.Parametros;
 public class CheckpointActivity extends Activity {
 	public static final int REQUEST_CODE = 0;
 	private ImageView iv01, iv02, iv03, iv04, iv05, iv06, iv07;
-	private TextView tv_dica,tv_senai,tv_titulo;
+	private TextView tv_dica,tv_senai,tv_titulo,tv_tdica;
 	private String resultado = "", dica = "", vericacao = "",propaganda="";
 	private Instrucoes ins;
 	private int conta = 0, aux = 0;
@@ -64,6 +64,7 @@ public class CheckpointActivity extends Activity {
 		tv_dica = (TextView) findViewById(R.id.tv_dica);
 		tv_senai = (TextView) findViewById(R.id.tv_senai);
 		tv_titulo = (TextView) findViewById(R.id.tv_titulo);
+		tv_tdica = (TextView) findViewById(R.id.tv_tdica);
 		bt_capturar = (Button) findViewById(R.id.bt_capturar);
 		
 		
@@ -131,6 +132,7 @@ public class CheckpointActivity extends Activity {
 
 	private void verificarCheckpoint() {
 		tv_titulo.setText("Você Sabia?");
+		tv_tdica.setText("Dica: ");
 		ParametrosDao dao = new ParametrosDao(this);
 		Parametros pq = new Parametros();
 		//Toast.makeText(this, "Contagem = " + conta, Toast.LENGTH_LONG).show();
@@ -281,7 +283,7 @@ private void salvarDica() {
 		AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 		dialogBuilder
 				.setTitle("Você esta no lugar errado!!")
-				.setMessage("Leia a dica novamente")
+				.setMessage("Verifique sua dica novamente e se dirija ao destino correto da charada")
 				.setCancelable(false)
 				.setPositiveButton("OK",
 						new DialogInterface.OnClickListener() {
@@ -328,7 +330,7 @@ private void salvarDica() {
 			return true;
 		}
 		else if (id == R.id.action_regras) {
-			
+			regras();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

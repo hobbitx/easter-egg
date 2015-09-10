@@ -1,5 +1,8 @@
 package com.senai.easteregg.activity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.senai.easteregg.R;
 import com.senai.easteregg.R.id;
 import com.senai.easteregg.R.layout;
@@ -10,13 +13,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class CreditosActivity extends Activity {
-
+	private ListView lv_lista,lv_list;
+	private ArrayList<String> listaCreditos = new ArrayList<String>(Arrays.asList(
+			"Alex Oliveira",
+			"Fabio Alves",
+			"Fabricio Diniz",
+			"Isabelle Patrocinio",
+			"Marcos Assis",
+			"Robert Cristiam"
+			));
+	private  ArrayList<String> listaCreditos2 = new ArrayList<String>(Arrays.asList(
+			"Bruno Eustaquio",
+			"Fabio Nelson",
+			"Glaycon Gomes",
+			"Juan Luiz",
+			"Marcello Fadul"
+			));
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_creditos);
+		lv_list = (ListView) findViewById(R.id.lv_list);
+		lv_lista = (ListView) findViewById(R.id.lv_lista);
+		
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaCreditos);
+		lv_list.setAdapter(adapter);
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaCreditos2);
+		lv_lista.setAdapter(adapter2);
+		
 	}
 
 	@Override
@@ -39,7 +68,7 @@ public class CreditosActivity extends Activity {
 
 	}
 	private void voltar() {
-		Intent i = new Intent(this, CheckpointActivity.class);
+		Intent i = new Intent(this, ContagemRegressivaActivity.class);
 		startActivity(i);
 
 	}
@@ -58,7 +87,7 @@ public class CreditosActivity extends Activity {
 			return true;
 		}
 		else if (id == R.id.action_regras) {
-			
+			regras();
 			return true;
 		}
 		else if (id == R.id.action_voltar) {
